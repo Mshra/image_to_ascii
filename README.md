@@ -1,6 +1,6 @@
 # Image to ASCII generator
 
-Written in rust, my main goal with this project was to learn [Rust](https://www.rust-lang.org/).
+My main goal with this project was to learn [Rust](https://www.rust-lang.org/).
 
 **The algorithm works as following:** 
 1. accepts image path with extension(for example: image.jpg) as a command line argument.
