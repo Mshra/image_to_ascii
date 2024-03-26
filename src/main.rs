@@ -1,4 +1,4 @@
-use image::{open, DynamicImage};
+use image::{open, DynamicImage, GenericImageView, Luma, Pixel};
 use std::env;
 
 fn main() {
@@ -14,4 +14,15 @@ fn main() {
     let height: u32 = image.height();
     let gray_ramp: String =
         String::from("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,\"^`'. ");
+
+    for h in 0..height {
+        for w in 0..width {
+            let pixel: Luma<u8> = image.get_pixel(w, h).to_luma();
+            let intensity = pixel[0];
+            let index = ((gray_ramp.len() - 1) as u16) * intensity as u16 / 255;
+
+            print!("{}", &gray_ramp[index..index + 1]);
+        }
+        println!();
+    }
 }
