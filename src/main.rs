@@ -32,9 +32,7 @@ fn main() {
         gray_ramp.insert(k, v);
     }
 
-    // println!("width: {}, height: {}", image.width(), image.height());
     let (width, height) = max_dimensions(image.width(), image.height());
-    // println!("width: {}, height: {}", width, height);
 
     for h in 0..height {
         for w in 0..width {
